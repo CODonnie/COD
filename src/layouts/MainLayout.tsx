@@ -3,12 +3,12 @@ import Navbar from "../components/navigation/Navbar"
 
 function MainLayout() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="h-screen grid grid-rows-[auto_1fr_auto]">
       <Navbar />
-      <main className="flex-1 container-custom">
+      <main className="overflow-hidden">
         <Outlet />
       </main>
-      <div className="py-2 text-center border border-custom fixed bottom-0 left-0 right-0 bg-white">
+      <div className="py-2 text-center border border-custom bg-white">
         <p>Footer</p>
       </div>
     </div>
