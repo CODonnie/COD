@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+@import "tailwindcss";
+
+/* ============================= */
+/*        DESIGN TOKENS          */
+/* ============================= */
+@layer base {
+  :root {
+    /* Colors */
+    --background: 208 0% 92%;
+    --foreground: 180 100% 3%;
+    --accent: 180 100% 46%;
+    --muted: 180 10% 50%;
+    --border: 180 10% 80%;
+    --card: 0 0% 100%;
+
+    /* Typography (fluid) */
+    --fluid-heading: clamp(2rem, 5vw, 3.5rem);
+    --fluid-subheading: clamp(1.2rem, 3vw, 1.75rem);
+    --fluid-body: clamp(1rem, 2vw, 1.125rem);
+
+    /* Radius & transitions */
+    --radius: 0.75rem;
+    --transition: 0.3s ease;
+
+    /* Section spacing */
+    --section-padding-y: 4rem;
+    --section-padding-x: 1.5rem;
+  }
+
+  .dark {
+    --background: 180 100% 3%;
+    --foreground: 208 0% 92%;
+    --accent: 180 100% 46%;
+    --muted: 180 10% 50%;
+    --border: 180 10% 20%;
+    --card: 180 100% 5%;
+  }
+
+  *, ::before, ::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Montserrat", sans-serif;
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    transition: background var(--transition), color var(--transition);
+  }
+
+  #root {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* ============================= */
+/*        UTILITIES              */
+/* ============================= */
+@layer utilities {
+  /* Background & text shortcuts */
+  .bg-background { background: hsl(var(--background)); }
+  .text-foreground { color: hsl(var(--foreground)); }
+  .bg-accent { background: hsl(var(--accent)); }
+  .text-accent { color: hsl(var(--accent)); }
+  .text-muted { color: hsl(var(--muted)); }
+  .border-custom { border-color: hsl(var(--border)); }
+  .card { background: hsl(var(--card)); }
+
+  /* Rounded & transition */
+  .rounded-base { border-radius: var(--radius); }
+  .transition-base { transition: all var(--transition); }
+
+  /* Fluid typography */
+  .heading-fluid { font-size: var(--fluid-heading); font-weight: 700; line-height: 1.1; }
+  .subheading-fluid { font-size: var(--fluid-subheading); font-weight: 500; }
+  .body-fluid { font-size: var(--fluid-body); line-height: 1.5; }
+
+  /* Section padding - mobile first */
+  .section { padding: var(--section-padding-y) var(--section-padding-x); }
+
+  @media (min-width: 640px) { /* sm */
+    .section { padding: 5rem 2rem; }
+  }
+
+  @media (min-width: 768px) { /* md */
+    .section { padding: 6rem 3rem; }
+  }
+
+  @media (min-width: 1024px) { /* lg */
+    .section { padding: 7rem 4rem; }
+  }
+
+  @media (min-width: 1280px) { /* xl */
+    .section { padding: 8rem 5rem; }
+  }
+
+  @media (min-width: 1536px) { /* 2xl */
+    .section { padding: 10rem 6rem; }
+  }
+
+  /* Container widths */
+  .container-custom {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media (min-width: 640px) { .container-custom { max-width: 640px; } }
+  @media (min-width: 768px) { .container-custom { max-width: 768px; } }
+  @media (min-width: 1024px) { .container-custom { max-width: 1024px; } }
+  @media (min-width: 1280px) { .container-custom { max-width: 1200px; } }
+  @media (min-width: 1536px) { .container-custom { max-width: 1400px; } }
+}
