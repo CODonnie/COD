@@ -1,4 +1,3 @@
-import cod25 from "./Logo/cod25.svg";
 import illustrator from "./png/adobeAI.png";
 import xd from "./png/adobeXD.png";
 import canva from "./png/canva.png";
@@ -32,11 +31,11 @@ import xb from "./contactIcon/X-black.png";
 import linkedinb from "./contactIcon/linkedin-black.png";
 import whatsappb from "./contactIcon/whatsapp-black.png";
 import githubb from "./contactIcon/github-black.png";
-import LogoWhite from "./Logo/codWhite.png"
-import LogoBlack from "./Logo/codBlack.png"
+import LogoWhite from "./Logo/OrduW.png"
+import LogoBlack from "./Logo/OrduB.png"
+import LogoAccent from "./Logo/OrduA.png"
 
 export const assets = {
-  cod25,
   illustrator,
   xd,
   canva,
@@ -81,5 +80,5 @@ export const darkAssets = [
 export const logo = {
     LogoBlack,
     LogoWhite,
-    cod25,
+    LogoAccent,
 }
